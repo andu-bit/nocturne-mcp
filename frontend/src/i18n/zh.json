@@ -1,0 +1,461 @@
+{
+  "app": {
+    "nav": {
+      "brand": "Nocturne 管理面板",
+      "review": "审查与审计",
+      "memory": "记忆浏览器",
+      "maintenance": "大脑清理",
+      "settings": "设置"
+    },
+    "settings": {
+      "title": "设置",
+      "subtitle": "管理你的 Nocturne Memory 实例配置。",
+      "tab_general": "通用",
+      "tab_database": "数据库",
+      "tab_memory": "记忆",
+      "loading": "加载设置中...",
+      "section_server": "服务器配置",
+      "section_locale": "语言 / 区域",
+      "section_advanced": "开发者模式 / 高级",
+      "section_database": "数据库连接",
+      "section_boot_uris": "启动 URI",
+      "section_presets": "启动预设",
+      "section_domains": "记忆域名"
+    },
+    "error": {
+      "connection_refused": "无法连接到后端服务 (Connection Refused)",
+      "retry": "重试",
+      "troubleshooting": "请检查以下几项配置：",
+      "check_backend": "后端进程是否正在运行？",
+      "check_port_title": "端口配置是否一致？",
+      "check_port_detail": "请检查 config.json 中的 web_port 是否与前端请求的端口一致。",
+      "check_docker": "如果你在使用 Docker，请检查 docker-compose.yml 中的端口映射。"
+    },
+    "loading": {
+      "connecting": "正在连接记忆核心..."
+    }
+  },
+  "auth": {
+    "title": "Nocturne Admin",
+    "subtitle": "记忆管理面板",
+    "token_label": "请输入 API Token",
+    "token_placeholder": "输入你的 API Token...",
+    "connect": "连接",
+    "verifying": "验证中...",
+    "invalid_token": "Token 无效，请检查后重试",
+    "network_error": "连接失败，请检查服务器状态",
+    "footer": "Nocturne Memory"
+  },
+  "settings": {
+    "server": {
+      "port_label": "端口号",
+      "docker_managed": "由 docker-compose.yml 管理 — Docker 环境下不可编辑。",
+      "auto_open": "启动时自动打开浏览器",
+      "config_file": "配置文件：",
+      "restart_warning": "点击保存后，需要重启服务器进程才能生效。",
+      "saving": "保存中...",
+      "save": "保存",
+      "save_failed": "保存失败",
+      "invalid_port": "无效的端口号"
+    },
+    "database": {
+      "type_label": "类型",
+      "sqlite": "SQLite",
+      "postgresql": "PostgreSQL",
+      "path_label": "路径",
+      "size_label": "大小",
+      "url_label": "URL",
+      "open_folder": "打开文件夹",
+      "refresh": "刷新",
+      "type_selector_label": "数据库类型",
+      "file_path_label": "数据库文件路径",
+      "connection_url_label": "连接 URL",
+      "sqlite_placeholder": "C:/Users/me/data/memory.db",
+      "pg_placeholder": "postgresql+asyncpg://user:pass@host:5432/dbname",
+      "test_save": "测试并保存",
+      "test_connection": "测试连接",
+      "testing": "测试中...",
+      "connected_saved": "已连接并保存。重启服务器后生效。",
+      "created_switch": "已创建。点击「测试并保存」即可切换到此数据库。",
+      "create_new_label": "创建新数据库",
+      "create_new_desc": "输入文件路径。文件和父文件夹将被自动创建。",
+      "new_db_placeholder": "C:/Users/me/data/new_memory.db",
+      "creating": "创建中...",
+      "create": "创建"
+    },
+    "boot_uris": {
+      "save_failed": "保存失败",
+      "delete_failed": "删除失败",
+      "remove_override_title": "移除覆盖",
+      "remove_override_message": "移除命名空间 \"{{namespace}}\" 的覆盖设置？此命名空间将回退到默认的启动 URI。",
+      "remove": "移除",
+      "default_label": "默认（回退）",
+      "fallback_badge": "回退",
+      "uri_count": "{{count}} 个 URI",
+      "empty": "未配置启动 URI",
+      "placeholder": "core://agent",
+      "add": "添加",
+      "saving": "保存中...",
+      "save": "保存",
+      "removing": "移除中...",
+      "remove_override_button": "移除覆盖",
+      "loading": "加载中...",
+      "description": "Agent 启动时加载到 system://boot 的 URI 列表。没有特定覆盖设置的 Agent 使用默认列表。",
+      "select_or_type": "选择或输入...",
+      "custom_name": "+ 自定义名称...",
+      "namespace_placeholder": "命名空间名称",
+      "cancel": "取消",
+      "add_namespace": "添加命名空间覆盖"
+    },
+    "presets": {
+      "description": "定制智能体脑海中的『记忆加载预设方案』。不同的方案决定了系统在苏醒（启动）时会加载哪些基础记忆。你可以创建多套方案并随时切换，当前处于「激活中」状态的方案会立刻在后台生效。",
+      "loading": "加载中...",
+      "active": "激活中",
+      "activate": "应用方案",
+      "activate_failed": "应用方案失败",
+      "edit": "编辑",
+      "duplicate": "复制方案",
+      "duplicate_failed": "复制方案失败",
+      "delete": "删除",
+      "delete_title": "永久删除预设方案",
+      "delete_message": "你确定要抹除预设方案「{{name}}」吗？这不会删除真实的记忆节点，但会使此方案配置永久失效。",
+      "delete_failed": "删除失败",
+      "add_new": "创建新方案",
+      "name_label": "方案名称",
+      "name_placeholder": "例如：日常陪伴、沉浸式跑团、测试方案...",
+      "default_namespace": "通用加载记忆（无特定 Agent 时加载）",
+      "new_namespace_placeholder": "为特定 Agent 制定专属名单。输入 Agent 代号 (如 agent_a)",
+      "add_namespace": "添加专属名单",
+      "remove_namespace": "移除专属名单",
+      "uri_placeholder": "输入记忆路径 (例如 core://agent)",
+      "namespace_title": "专属 Agent ({{namespace}})",
+      "save": "保存方案",
+      "saving": "保存中...",
+      "save_failed": "保存失败",
+      "cancel": "取消",
+      "editor_tip": "💡 提示：这里定制的是智能体苏醒时自动加载的『核心记忆名单』。只需输入记忆路径（如 core://agent ），系统就会在启动时最先想起来。你还可以添加专属 Agent，为不同的分身定制专属的回忆。",
+      "edit_title": "编辑预设方案",
+      "create_title": "新建预设方案"
+    },
+    "domains": {
+      "validation_error": "域名必须以字母开头，只能包含小写字母、数字和下划线。",
+      "core_remove_error": "\"core\" 域名不可移除。",
+      "domain_in_use_error": "域名非空。任意命名空间中只要还存在该域名的记忆，就无法全局删除。请先处理这些记忆。",
+      "placeholder": "新域名",
+      "add": "添加",
+      "restart_warning": "需要重启服务器才能生效",
+      "saving": "保存中...",
+      "save": "保存",
+      "save_failed": "保存失败"
+    },
+    "advanced": {
+      "save_failed": "保存失败",
+      "host_label": "监听地址",
+      "host_placeholder": "127.0.0.1",
+      "docker_managed": "由 docker-compose.yml 管理 — Docker 环境下不可编辑。",
+      "remote_mode_hint": "局域网 / 远程访问模式。其他设备上的客户端可以连接。",
+      "localhost_hint": "默认：只有本机可以连接。改为 <c>0.0.0.0</c> 以允许局域网 / 远程访问。",
+      "token_label": "API 令牌",
+      "token_already_set": "（已设置）",
+      "token_not_set": "未设置（必填）",
+      "generate_token_title": "生成随机令牌",
+      "generate": "生成",
+      "copy_token_title": "复制令牌",
+      "token_hint": "客户端必须发送 <code>Authorization: Bearer &lt;token&gt;</code> 才能访问 API。",
+      "token_required": "必填：远程模式下未设置令牌则服务器拒绝启动。",
+      "readonly_label": "只读 MCP 模式",
+      "readonly_desc": "启用后，MCP 工具仅允许读取操作。适用于公开部署。",
+      "restart_warning": "点击保存后，需要重启服务器进程才能生效。",
+      "saving": "保存中...",
+      "save": "保存"
+    },
+    "locale": {
+      "label": "语言 / 地区",
+      "auto_option": "自动检测 (跟随浏览器)",
+      "en_option": "English (en)",
+      "zh_option": "中文 (zh)",
+      "restart_warning": "需要重启服务器才能生效。",
+      "saving": "保存中...",
+      "save": "保存",
+      "save_failed": "保存失败"
+    }
+  },
+  "memory": {
+    "domains": {
+      "already_exists": "该域名已存在",
+      "add_success": "域名添加成功",
+      "delete_success": "域名删除成功",
+      "delete_domain": "删除该域名",
+      "delete_confirm_title": "确认删除域名",
+      "delete_confirm_warning": "该域名将从有效域名配置中移除。",
+      "delete_confirm_message": "确定要删除此域名吗？删除后，除非重新添加该域名，否则该域名下的所有现有记忆都将无法在记忆浏览器中直接访问。",
+      "add_domain": "添加域名",
+      "add_domain_placeholder": "新域名..."
+    },
+    "sidebar": {
+      "title": "记忆核心",
+      "subtitle": "神经探索者 v2.0",
+      "domains": "域名",
+      "current_path": "当前路径",
+      "domain_label": "{{domain}} 记忆"
+    },
+    "search": {
+      "placeholder": "搜索记忆...",
+      "results": "{{count}} 条匹配 \"{{query}}\" 的结果",
+      "no_results": "未找到 \"{{query}}\" 的结果",
+      "back": "返回浏览"
+    },
+    "status": {
+      "loading": "正在检索神经数据...",
+      "error": "访问拒绝 / 错误",
+      "return_root": "返回根节点"
+    },
+    "boot": {
+      "remove": "从启动项移除",
+      "add": "添加到启动项",
+      "label": "启动"
+    },
+    "edit": {
+      "edit": "编辑",
+      "save": "保存更改",
+      "saving": "保存中...",
+      "priority": "优先级",
+      "priority_hint": "（数字越小优先级越高）",
+      "disclosure": "触发条件",
+      "disclosure_hint": "（何时回想）",
+      "disclosure_label": "触发条件：",
+      "disclosure_placeholder": "例如：当我需要记住..."
+    },
+    "create": {
+      "button": "创建记忆",
+      "title": "创建记忆",
+      "subtitle": "向记忆树添加新节点",
+      "parent_path": "父路径",
+      "title_label": "标题",
+      "optional": "（可选）",
+      "title_hint": "仅限字母数字、连字符、下划线",
+      "title_placeholder": "例如：my_memory",
+      "priority_label": "优先级",
+      "priority_hint": "0 = 最高，5+ = 最低",
+      "disclosure_label": "触发条件",
+      "disclosure_placeholder": "何时回想此记忆...",
+      "content_label": "内容",
+      "content_placeholder": "记忆内容...",
+      "cancel": "取消",
+      "creating": "创建中..."
+    },
+    "delete": {
+      "title": "删除记忆",
+      "tooltip": "删除此记忆",
+      "irreversible": "此操作不可撤销",
+      "confirm_message": "确定要删除此记忆路径吗？如果这是节点的最后一条路径，内容将变为孤儿。",
+      "button": "删除",
+      "cancel": "取消",
+      "deleting": "删除中..."
+    },
+    "empty": {
+      "empty_sector": "空白区域"
+    },
+    "grid": {
+      "memory_clusters": "记忆集群",
+      "sub_nodes": "子节点"
+    },
+    "alias": {
+      "label": "也可通过以下路径访问：",
+      "remove_tooltip": "移除此别名",
+      "confirm_yes": "是",
+      "confirm_no": "否",
+      "root_option": "（根）",
+      "name_placeholder": "名称",
+      "disclosure_placeholder": "触发条件...",
+      "priority": "优先级",
+      "add": "添加别名",
+      "remove_error": "移除别名失败：{{error}}"
+    },
+    "keywords": {
+      "label": "词库：",
+      "placeholder": "关键词...",
+      "add": "添加",
+      "add_error": "添加关键词失败：{{error}}",
+      "remove_error": "移除关键词失败：{{error}}"
+    },
+    "card": {
+      "no_preview": "无预览",
+      "orphaned": "已孤儿"
+    },
+    "toast": {
+      "save_failed": "保存失败：{{error}}",
+      "delete_failed": "删除失败：{{error}}"
+    }
+  },
+  "review": {
+    "error": {
+      "disconnected": "与神经核心断开连接（后端离线）。",
+      "retrieve_failed": "无法检索记忆片段。",
+      "unknown_rollback": "回滚时发生未知错误",
+      "retrieval_failed_title": "记忆检索失败"
+    },
+    "toast": {
+      "rejection_failed": "拒绝失败：{{error}}",
+      "integration_failed": "合并失败：{{error}}",
+      "mass_integration_failed": "批量合并失败：{{error}}"
+    },
+    "confirm": {
+      "reject_title": "拒绝变更",
+      "reject_message": "拒绝节点组 {{uri}} 的变更？这将还原记忆状态。",
+      "reject_label": "拒绝",
+      "integrate_all_title": "全部合并",
+      "integrate_all_message": "合并所有待处理的记忆？",
+      "integrate_all_label": "全部合并"
+    },
+    "sidebar": {
+      "title": "全局审查",
+      "subtitle": "所有命名空间"
+    },
+    "action": {
+      "integrate_all": "全部合并",
+      "reject_group": "拒绝组",
+      "integrate_group": "合并组",
+      "retry": "重试连接"
+    },
+    "metadata": {
+      "title": "边元数据",
+      "initial": "（初始）",
+      "removed": "（已移除）",
+      "preserved": "（已保留）",
+      "shifts": "变更"
+    },
+    "namespace": {
+      "default": "默认"
+    },
+    "badge": {
+      "modified": "已修改",
+      "rows_affected": "{{count}} 行受影响"
+    },
+    "diff_status": {
+      "deletion_detected": "检测到删除",
+      "creation_detected": "检测到创建",
+      "modification_detected": "检测到修改",
+      "no_deviation": "无内容差异"
+    },
+    "path_modifications": {
+      "title": "路径修改"
+    },
+    "path": {
+      "removed": "已移除",
+      "added": "已添加",
+      "accessible_at": "节点仍可通过以下路径访问："
+    },
+    "glossary": {
+      "title": "豆辞典关键词"
+    },
+    "status": {
+      "synchronizing": "同步中...",
+      "connection_lost": "连接丢失"
+    },
+    "empty": {
+      "awaiting_input": "等待输入",
+      "select_memory": "选择一个记忆片段来检查"
+    }
+  },
+  "maintenance": {
+    "error": {
+      "load_orphans_failed": "加载孤儿记忆失败：{{error}}",
+      "load_logs_failed": "加载日志统计失败：{{error}}"
+    },
+    "toast": {
+      "logs_cleared": "已清除 {{count}} 条日志记录。",
+      "clear_logs_failed": "清除日志失败：{{error}}",
+      "partial_delete_failed": "{{failed}} / {{total}} 条删除失败。失败的 ID：{{ids}}"
+    },
+    "confirm": {
+      "delete_title": "删除记忆",
+      "delete_message": "永久删除 {{count}} 条记忆？此操作不可撤销。",
+      "delete_label": "删除"
+    },
+    "prompt": {
+      "clear_logs_title": "清除访问日志",
+      "clear_logs_message": "保留多少天的日志？更早的条目将被移除。",
+      "clear_logs_label": "清除"
+    },
+    "badge": {
+      "deprecated": "已弃用",
+      "orphaned": "孤儿",
+      "unknown_date": "未知",
+      "node_prefix": "节点：",
+      "mem_prefix": "记忆 #{{id}}"
+    },
+    "detail": {
+      "target_no_paths": "目标 #{{id}} 也无路径",
+      "loading": "正在加载完整内容...",
+      "error_prefix": "错误：{{error}}",
+      "old_version": "旧版本（此记忆）",
+      "full_content": "完整内容",
+      "diff_header": "差异：#{{fromId}} → #{{toId}}",
+      "restore_btn": "恢复此记忆",
+      "restore_title": "恢复记忆配置",
+      "restore_domain_label": "域名",
+      "restore_path_label": "目标路径",
+      "restore_parent_placeholder": "选择父路径",
+      "restore_leaf_placeholder": "新节点名称",
+      "restore_disclosure_placeholder": "输入触发条件（Disclosure）",
+      "restore_priority_label": "优先级",
+      "restore_namespace_label": "命名空间",
+      "restore_namespace_default": "（默认）",
+      "restore_confirm_btn": "确认恢复",
+      "restore_cancel_btn": "取消",
+      "restore_success_toast": "记忆恢复成功，新路径：{{uri}}",
+      "restore_failed_toast": "恢复记忆失败：{{error}}"
+    },
+    "select": {
+      "deselect_all": "取消全选",
+      "select_all": "全选"
+    },
+    "header": {
+      "title": "大脑清理",
+      "subtitle": "查找并清理孤儿记忆——更新产生的弃用版本，以及因路径删除而无法访问的记忆。"
+    },
+    "stats": {
+      "deprecated_label": "已弃用",
+      "orphaned_label": "孤儿",
+      "access_logs_label": "访问日志",
+      "clearing": "清除中...",
+      "clear_button": "清除",
+      "oldest": "最早：{{date}}",
+      "no_records": "无记录"
+    },
+    "list": {
+      "header": "孤儿记忆",
+      "delete_selected": "删除 {{count}} 个已选中",
+      "refresh": "刷新",
+      "scanning": "正在扫描孤儿记忆...",
+      "error_title": "错误",
+      "empty_title": "系统干净",
+      "empty_desc": "未检测到孤儿记忆"
+    },
+    "section": {
+      "deprecated_versions": "已弃用版本",
+      "orphaned_memories": "孤儿记忆"
+    },
+    "group": {
+      "all": "所有记忆",
+      "deprecated_groups": "已弃用分组",
+      "orphaned_section": "孤儿记忆",
+      "orphaned_group": "孤儿记忆（无路径）",
+      "no_path": "目标 #{{id}}（无路径）"
+    }
+  },
+  "snapshot": {
+    "empty_sequence": "空序列",
+    "action_created": "已创建",
+    "action_deleted": "已删除",
+    "action_modified": "已修改",
+    "rows": "{{count}} 行"
+  },
+  "diff": {
+    "no_changes": "内容未检测到变化。",
+    "removed": "已移除",
+    "added": "已添加"
+  },
+  "_comment": "Key naming: {section}.{component}.{key}. Example: 'app.nav.review' for Review & Audit nav link. English is canonical — zh.json holds Chinese translations only."
+}

@@ -1,0 +1,26 @@
+{
+  "database_url": "sqlite+aiosqlite:////root/nocturne_memory/nocturne_data.db",
+  "db_pool_size": 5,
+  "db_max_overflow": 5,
+  "valid_domains": [
+    "core",
+    "writer",
+    "game",
+    "notes",
+    "narrative"
+  ],
+  "boot_uris": {
+    "": [
+      "core://agent",
+      "core://my_user",
+      "core://agent/my_user"
+    ]
+  },
+  "host": "127.0.0.1",
+  "web_port": 8233,
+  "auto_open_browser": true,
+  "api_token": null,
+  "cors_origins": null,
+  "public_readonly_mcp": false,
+  "locale": null
+}

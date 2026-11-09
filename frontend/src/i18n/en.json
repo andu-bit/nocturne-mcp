@@ -1,0 +1,469 @@
+{
+  "_comment": "Key naming: {section}.{component}.{key}. Example: 'app.nav.review' for Review & Audit nav link. English is canonical.",
+
+  "app": {
+    "nav": {
+      "brand": "Nocturne Admin",
+      "review": "Review & Audit",
+      "memory": "Memory Explorer",
+      "maintenance": "Brain Cleanup",
+      "settings": "Settings"
+    },
+    "settings": {
+      "title": "Settings",
+      "subtitle": "Manage your Nocturne Memory instance configuration.",
+      "tab_general": "General",
+      "tab_database": "Database",
+      "tab_memory": "Memory",
+      "loading": "Loading settings...",
+      "section_server": "Server Configuration",
+      "section_locale": "Language / Locale",
+      "section_advanced": "Developer Mode / Advanced",
+      "section_database": "Database Connection",
+      "section_boot_uris": "Boot URIs",
+      "section_presets": "Boot Presets",
+      "section_domains": "Memory Domains"
+    },
+    "error": {
+      "connection_refused": "Cannot connect to backend service (Connection Refused)",
+      "retry": "Retry",
+      "troubleshooting": "Please check the following:",
+      "check_backend": "Is the backend process running?",
+      "check_port_title": "Port mismatch? ",
+      "check_port_detail": "Check that web_port in config.json matches the port used by the frontend.",
+      "check_docker": "If using Docker, check the port mapping in docker-compose.yml."
+    },
+    "loading": {
+      "connecting": "Connecting to Memory Core..."
+    }
+  },
+
+  "auth": {
+    "title": "Nocturne Admin",
+    "subtitle": "Memory Dashboard",
+    "token_label": "API Token",
+    "token_placeholder": "Enter your API Token...",
+    "connect": "Connect",
+    "verifying": "Verifying...",
+    "invalid_token": "Invalid token, please try again",
+    "network_error": "Connection failed, please check server status",
+    "footer": "Nocturne Memory"
+  },
+
+  "settings": {
+    "server": {
+      "port_label": "Port",
+      "docker_managed": "Managed by docker-compose.yml — not editable in Docker environment.",
+      "auto_open": "Auto-open browser on startup",
+      "config_file": "Config file:",
+      "restart_warning": "Server restart required for changes to take effect.",
+      "saving": "Saving...",
+      "save": "Save",
+      "save_failed": "Save failed",
+      "invalid_port": "Invalid port number"
+    },
+    "database": {
+      "type_label": "Type",
+      "sqlite": "SQLite",
+      "postgresql": "PostgreSQL",
+      "path_label": "Path",
+      "size_label": "Size",
+      "url_label": "URL",
+      "open_folder": "Open Folder",
+      "refresh": "Refresh",
+      "type_selector_label": "Database Type",
+      "file_path_label": "Database File Path",
+      "connection_url_label": "Connection URL",
+      "sqlite_placeholder": "C:/Users/me/data/memory.db",
+      "pg_placeholder": "postgresql+asyncpg://user:pass@host:5432/dbname",
+      "test_save": "Test & Save",
+      "test_connection": "Test Connection",
+      "testing": "Testing...",
+      "connected_saved": "Connected and saved. Restart server to apply.",
+      "created_switch": "Created. Click 'Test & Save' to switch to this database.",
+      "create_new_label": "Create New Database",
+      "create_new_desc": "Enter a file path. The file and parent folder will be created automatically.",
+      "new_db_placeholder": "C:/Users/me/data/new_memory.db",
+      "creating": "Creating...",
+      "create": "Create"
+    },
+    "boot_uris": {
+      "save_failed": "Save failed",
+      "delete_failed": "Delete failed",
+      "remove_override_title": "Remove Override",
+      "remove_override_message": "Remove override for namespace \"{{namespace}}\"? This namespace will fall back to the default boot URIs.",
+      "remove": "Remove",
+      "default_label": "Default (Fallback)",
+      "fallback_badge": "Fallback",
+      "uri_count": "{{count}} URIs",
+      "empty": "No boot URIs configured",
+      "placeholder": "core://agent",
+      "add": "Add",
+      "saving": "Saving...",
+      "save": "Save",
+      "removing": "Removing...",
+      "remove_override_button": "Remove Override",
+      "loading": "Loading...",
+      "description": "URIs loaded into system://boot when an agent starts. Agents without a specific override use the default list.",
+      "select_or_type": "Select or type...",
+      "custom_name": "+ Custom Name...",
+      "namespace_placeholder": "Namespace name",
+      "cancel": "Cancel",
+      "add_namespace": "Add Namespace Override"
+    },
+    "presets": {
+      "description": "Configure the Agent's 'Memory Loading Schemes'. Different schemes determine which basic memories will be loaded upon awakening (starting). You can create multiple schemes and switch at any time; the 'Active' scheme takes effect immediately.",
+      "loading": "Loading...",
+      "active": "Active",
+      "activate": "Apply Scheme",
+      "activate_failed": "Failed to apply scheme",
+      "edit": "Edit",
+      "duplicate": "Duplicate Scheme",
+      "duplicate_failed": "Duplication failed",
+      "delete": "Delete",
+      "delete_title": "Permanently Delete Scheme",
+      "delete_message": "Are you sure you want to delete scheme \"{{name}}\"? This will not delete the actual memory nodes, but the scheme configuration itself will be permanently lost.",
+      "delete_failed": "Deletion failed",
+      "add_new": "Create New Scheme",
+      "name_label": "Scheme Name",
+      "name_placeholder": "e.g., Daily Companion, Deep Roleplay, Debug Scheme...",
+      "default_namespace": "Global Boot Memories (Loaded by default)",
+      "new_namespace_placeholder": "Customize memory for a specific agent. Enter Agent Code (e.g., agent_a)",
+      "add_namespace": "Add Agent Custom List",
+      "remove_namespace": "Remove Agent Custom List",
+      "uri_placeholder": "Enter memory URI (e.g., core://agent)",
+      "namespace_title": "Agent ({{namespace}}) Exclusive Memories",
+      "save": "Save Scheme",
+      "saving": "Saving...",
+      "save_failed": "Save failed",
+      "cancel": "Cancel",
+      "editor_tip": "💡 Tip: This defines the list of 'Core Memories' that the agent retrieves upon awakening. Just enter memory paths (like core://agent) to make them the first things loaded at startup. You can also add exclusive agents to customize memories for different personas.",
+      "edit_title": "Edit Memory Scheme",
+      "create_title": "New Memory Scheme"
+    },
+    "domains": {
+      "validation_error": "Domain names must start with a letter and can only contain lowercase letters, numbers, and underscores.",
+      "core_remove_error": "The \"core\" domain cannot be removed.",
+      "domain_in_use_error": "Domain is not empty. It contains memories in some namespace. Please process them first before deleting the domain globally.",
+      "placeholder": "New domain",
+      "add": "Add",
+      "restart_warning": "Server restart required to apply changes",
+      "saving": "Saving...",
+      "save": "Save",
+      "save_failed": "Save failed"
+    },
+    "advanced": {
+      "save_failed": "Save failed",
+      "host_label": "Host Address",
+      "host_placeholder": "127.0.0.1",
+      "docker_managed": "Managed by docker-compose.yml — not editable in Docker environment.",
+      "remote_mode_hint": "LAN / Remote access. Clients on other devices can connect.",
+      "localhost_hint": "Default: localhost only. Change to <c>0.0.0.0</c> for LAN / remote access.",
+      "token_label": "API Token",
+      "token_already_set": "(Set)",
+      "token_not_set": "Not Set (Required)",
+      "generate_token_title": "Generate Random Token",
+      "generate": "Generate",
+      "copy_token_title": "Copy Token",
+      "token_hint": "Clients must send <code>Authorization: Bearer &lt;token&gt;</code> to access the API.",
+      "token_required": "Required: server will refuse to start without a token in remote mode.",
+      "readonly_label": "Read-only MCP Mode",
+      "readonly_desc": "When enabled, MCP tools only allow read operations. Suitable for public deployments.",
+      "restart_warning": "Server restart required for changes to take effect.",
+      "saving": "Saving...",
+      "save": "Save"
+    },
+    "locale": {
+      "label": "Language / Locale",
+      "auto_option": "Auto / Browser Default",
+      "en_option": "English (en)",
+      "zh_option": "中文 (zh)",
+      "restart_warning": "Server restart required to apply changes.",
+      "saving": "Saving...",
+      "save": "Save",
+      "save_failed": "Save failed"
+    }
+  },
+
+  "memory": {
+    "domains": {
+      "already_exists": "Domain already exists",
+      "add_success": "Domain added successfully",
+      "delete_success": "Domain deleted successfully",
+      "delete_domain": "Delete Domain",
+      "delete_confirm_title": "Confirm Delete Domain",
+      "delete_confirm_warning": "This domain will be removed from your valid domains configuration.",
+      "delete_confirm_message": "Are you sure you want to delete this domain? Active memories under this domain might become inaccessible unless the domain is added back.",
+      "add_domain": "Add Domain",
+      "add_domain_placeholder": "New domain..."
+    },
+    "sidebar": {
+      "title": "Memory Core",
+      "subtitle": "Neural Explorer v2.0",
+      "domains": "Domains",
+      "current_path": "Current Path",
+      "domain_label": "{{domain}} Memories"
+    },
+    "search": {
+      "placeholder": "Search memories...",
+      "results": "{{count}} results for \"{{query}}\"",
+      "no_results": "No results for \"{{query}}\"",
+      "back": "Back to Browse"
+    },
+    "status": {
+      "loading": "Retrieving neural data...",
+      "error": "Access Denied / Error",
+      "return_root": "Return to Root"
+    },
+    "boot": {
+      "remove": "Remove from Boot",
+      "add": "Add to Boot",
+      "label": "Boot"
+    },
+    "edit": {
+      "edit": "Edit",
+      "save": "Save Changes",
+      "saving": "Saving...",
+      "priority": "Priority",
+      "priority_hint": "(Lower values = higher priority)",
+      "disclosure": "Disclosure",
+      "disclosure_hint": "(When to recall)",
+      "disclosure_label": "Disclosure:",
+      "disclosure_placeholder": "e.g., When I need to remember..."
+    },
+    "create": {
+      "button": "Create Memory",
+      "title": "Create Memory",
+      "subtitle": "Add a new node to the memory tree",
+      "parent_path": "Parent Path",
+      "title_label": "Title",
+      "optional": "(Optional)",
+      "title_hint": "Alphanumeric, hyphens, underscores only",
+      "title_placeholder": "e.g., my_memory",
+      "priority_label": "Priority",
+      "priority_hint": "0 = highest, 5+ = lowest",
+      "disclosure_label": "Disclosure",
+      "disclosure_placeholder": "When to recall this memory...",
+      "content_label": "Content",
+      "content_placeholder": "Memory content...",
+      "cancel": "Cancel",
+      "creating": "Creating..."
+    },
+    "delete": {
+      "title": "Delete Memory",
+      "tooltip": "Delete this memory",
+      "irreversible": "This action cannot be undone",
+      "confirm_message": "Are you sure you want to delete this memory path? If this is the node's last path, the content will become orphaned.",
+      "button": "Delete",
+      "cancel": "Cancel",
+      "deleting": "Deleting..."
+    },
+    "empty": {
+      "empty_sector": "Empty Sector"
+    },
+    "grid": {
+      "memory_clusters": "Memory Clusters",
+      "sub_nodes": "Sub-nodes"
+    },
+    "alias": {
+      "label": "Also accessible via:",
+      "remove_tooltip": "Remove this alias",
+      "confirm_yes": "Yes",
+      "confirm_no": "No",
+      "root_option": "(Root)",
+      "name_placeholder": "Name",
+      "disclosure_placeholder": "Disclosure...",
+      "priority": "Priority",
+      "add": "Add Alias",
+      "remove_error": "Failed to remove alias: {{error}}"
+    },
+    "keywords": {
+      "label": "Keywords:",
+      "placeholder": "Keywords...",
+      "add": "Add",
+      "add_error": "Failed to add keyword: {{error}}",
+      "remove_error": "Failed to remove keyword: {{error}}"
+    },
+    "card": {
+      "no_preview": "No Preview",
+      "orphaned": "Orphaned"
+    },
+    "toast": {
+      "save_failed": "Save failed: {{error}}",
+      "delete_failed": "Delete failed: {{error}}"
+    }
+  },
+
+  "review": {
+    "error": {
+      "disconnected": "Disconnected from Neural Core (backend offline).",
+      "retrieve_failed": "Failed to retrieve memory fragments.",
+      "unknown_rollback": "Unknown error during rollback",
+      "retrieval_failed_title": "Memory Retrieval Failed"
+    },
+    "toast": {
+      "rejection_failed": "Rejection failed: {{error}}",
+      "integration_failed": "Integration failed: {{error}}",
+      "mass_integration_failed": "Mass integration failed: {{error}}"
+    },
+    "confirm": {
+      "reject_title": "Reject Changes",
+      "reject_message": "Reject changes for node group {{uri}}? This will restore the memory state.",
+      "reject_label": "Reject",
+      "integrate_all_title": "Integrate All",
+      "integrate_all_message": "Integrate all pending memories?",
+      "integrate_all_label": "Integrate All"
+    },
+    "sidebar": {
+      "title": "Global Review",
+      "subtitle": "All Namespaces"
+    },
+    "action": {
+      "integrate_all": "Integrate All",
+      "reject_group": "Reject Group",
+      "integrate_group": "Integrate Group",
+      "retry": "Retry Connection"
+    },
+    "metadata": {
+      "title": "Edge Metadata",
+      "initial": "(Initial)",
+      "removed": "(Removed)",
+      "preserved": "(Preserved)",
+      "shifts": "Shifts"
+    },
+    "namespace": {
+      "default": "Default"
+    },
+    "badge": {
+      "modified": "Modified",
+      "rows_affected": "{{count}} rows affected"
+    },
+    "diff_status": {
+      "deletion_detected": "Deletion Detected",
+      "creation_detected": "Creation Detected",
+      "modification_detected": "Modification Detected",
+      "no_deviation": "No Content Deviation"
+    },
+    "path_modifications": {
+      "title": "Path Modifications"
+    },
+    "path": {
+      "removed": "Removed",
+      "added": "Added",
+      "accessible_at": "Node still accessible at:"
+    },
+    "glossary": {
+      "title": "Glossary Keywords"
+    },
+    "status": {
+      "synchronizing": "Synchronizing...",
+      "connection_lost": "Connection Lost"
+    },
+    "empty": {
+      "awaiting_input": "Awaiting Input",
+      "select_memory": "Select a memory fragment to inspect"
+    }
+  },
+
+  "maintenance": {
+    "error": {
+      "load_orphans_failed": "Failed to load orphan memories: {{error}}",
+      "load_logs_failed": "Failed to load log statistics: {{error}}"
+    },
+    "toast": {
+      "logs_cleared": "Cleared {{count}} log records.",
+      "clear_logs_failed": "Failed to clear logs: {{error}}",
+      "partial_delete_failed": "{{failed}} / {{total}} deletions failed. Failed IDs: {{ids}}"
+    },
+    "confirm": {
+      "delete_title": "Delete Memory",
+      "delete_message": "Permanently delete {{count}} memories? This cannot be undone.",
+      "delete_label": "Delete"
+    },
+    "prompt": {
+      "clear_logs_title": "Clear Access Logs",
+      "clear_logs_message": "How many days of logs to keep? Older entries will be removed.",
+      "clear_logs_label": "Clear"
+    },
+    "badge": {
+      "deprecated": "Deprecated",
+      "orphaned": "Orphaned",
+      "unknown_date": "Unknown",
+      "node_prefix": "Node:",
+      "mem_prefix": "Mem: #{{id}}"
+    },
+    "detail": {
+      "target_no_paths": "Target #{{id}} also has no paths",
+      "loading": "Loading full content...",
+      "error_prefix": "Error: {{error}}",
+      "old_version": "Old Version (this memory)",
+      "full_content": "Full Content",
+      "diff_header": "Diff: #{{fromId}} → #{{toId}}",
+      "restore_btn": "Restore Memory",
+      "restore_title": "Restore Memory Configuration",
+      "restore_domain_label": "Domain",
+      "restore_path_label": "Target Path",
+      "restore_parent_placeholder": "Select parent path",
+      "restore_leaf_placeholder": "New segment name",
+      "restore_disclosure_placeholder": "Enter trigger condition (Disclosure)",
+      "restore_priority_label": "Priority",
+      "restore_namespace_label": "Namespace",
+      "restore_namespace_default": "(default)",
+      "restore_confirm_btn": "Confirm Restore",
+      "restore_cancel_btn": "Cancel",
+      "restore_success_toast": "Memory restored successfully at {{uri}}",
+      "restore_failed_toast": "Failed to restore memory: {{error}}"
+    },
+    "select": {
+      "deselect_all": "Deselect All",
+      "select_all": "Select All"
+    },
+    "header": {
+      "title": "Brain Cleanup",
+      "subtitle": "Find and clean up orphan memories — deprecated versions from updates and inaccessible memories due to deleted paths."
+    },
+    "stats": {
+      "deprecated_label": "Deprecated",
+      "orphaned_label": "Orphaned",
+      "access_logs_label": "Access Logs",
+      "clearing": "Clearing...",
+      "clear_button": "Clear",
+      "oldest": "Oldest: {{date}}",
+      "no_records": "No Records"
+    },
+    "list": {
+      "header": "Orphan Memories",
+      "delete_selected": "Delete {{count}} Selected",
+      "refresh": "Refresh",
+      "scanning": "Scanning for orphan memories...",
+      "error_title": "Error",
+      "empty_title": "System Clean",
+      "empty_desc": "No orphan memories detected"
+    },
+    "section": {
+      "deprecated_versions": "Deprecated Versions",
+      "orphaned_memories": "Orphan Memories"
+    },
+    "group": {
+      "all": "All Memories",
+      "deprecated_groups": "Deprecated Groups",
+      "orphaned_section": "Orphan Memories",
+      "orphaned_group": "Orphan Memories (no paths)",
+      "no_path": "Target #{{id}} (no paths)"
+    }
+  },
+
+  "snapshot": {
+    "empty_sequence": "Empty Sequence",
+    "action_created": "Created",
+    "action_deleted": "Deleted",
+    "action_modified": "Modified",
+    "rows": "{{count}} rows"
+  },
+
+  "diff": {
+    "no_changes": "No changes detected in content.",
+    "removed": "REMOVED",
+    "added": "ADDED"
+  }
+}

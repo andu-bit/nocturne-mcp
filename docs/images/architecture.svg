@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Box Filters for Glow -->
+    <filter id="glow-ai" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <marker id="arrow-ai" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#60a5fa" />
+    </marker>
+
+    <marker id="arrow-human" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f472b6" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)" rx="10" />
+
+  <!-- === CENTRAL CORE === -->
+  <g transform="translate(350, 160)">
+    <!-- Database Cylinder -->
+    <path d="M 0 30 C 0 10 100 10 100 30 V 110 C 100 130 0 130 0 110 V 30" fill="#334155" stroke="#94a3b8" stroke-width="2"/>
+    <ellipse cx="50" cy="30" rx="50" ry="20" fill="#475569" stroke="#94a3b8" stroke-width="2"/>
+    
+    <text x="50" y="75" font-family="Arial, sans-serif" font-size="16" fill="#f8fafc" text-anchor="middle" font-weight="bold">Nocturne</text>
+    <text x="50" y="95" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Memory Core</text>
+    <text x="50" y="115" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">(SQLite)</text>
+  </g>
+
+
+  <!-- === LEFT: AI INTERFACE (MCP) === -->
+  <!-- Agent 1 (e.g. Alice) -->
+  <g transform="translate(70, 70)">
+    <rect x="0" y="0" width="160" height="65" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5" opacity="0.6"/>
+    <text x="80" y="28" font-family="Arial, sans-serif" font-size="13" fill="#60a5fa" text-anchor="middle" font-weight="bold">AI Agent (Alice)</text>
+    <text x="80" y="48" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd" text-anchor="middle">Namespace: alice</text>
+  </g>
+
+  <!-- Agent 2 (Main Focus) -->
+  <g transform="translate(70, 160)">
+    <rect x="0" y="0" width="160" height="100" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="2" filter="url(#glow-ai)"/>
+    <text x="80" y="28" font-family="Arial, sans-serif" font-size="15" fill="#60a5fa" text-anchor="middle" font-weight="bold">AI Agent (Nocturne)</text>
+    <text x="80" y="46" font-family="Arial, sans-serif" font-size="11" fill="#bfdbfe" text-anchor="middle">Namespace Isolation</text>
+    
+    <line x1="10" y1="60" x2="150" y2="60" stroke="#334155" stroke-width="1"/>
+    
+    <text x="80" y="78" font-family="Arial, sans-serif" font-size="11" fill="#93c5fd" text-anchor="middle">MCP Client</text>
+  </g>
+
+  <!-- Agent 3 (e.g. Bob) -->
+  <g transform="translate(70, 290)">
+    <rect x="0" y="0" width="160" height="65" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5" opacity="0.6"/>
+    <text x="80" y="28" font-family="Arial, sans-serif" font-size="13" fill="#60a5fa" text-anchor="middle" font-weight="bold">AI Agent (Bob)</text>
+    <text x="80" y="48" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd" text-anchor="middle">Namespace: bob</text>
+  </g>
+
+  <!-- Connection: AI <-> DB -->
+  <g>
+    <!-- Connections for Agent 1 -->
+    <path d="M 230 102 C 290 102, 290 190, 345 190" stroke="#60a5fa" stroke-width="1.5" opacity="0.5" marker-end="url(#arrow-ai)" fill="none" stroke-dasharray="3,3"/>
+    
+    <!-- Connections for Agent 2 -->
+    <!-- Read path -->
+    <path d="M 230 190 L 345 190" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow-ai)" stroke-dasharray="5,3" fill="none"/>
+    <text x="290" y="182" font-family="Arial, sans-serif" font-size="11" fill="#60a5fa" text-anchor="middle">read_memory</text>
+    
+    <!-- Write path -->
+    <path d="M 230 230 L 345 230" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow-ai)" fill="none"/>
+    <text x="290" y="222" font-family="Arial, sans-serif" font-size="11" fill="#60a5fa" text-anchor="middle">create / update</text>
+
+    <!-- Connections for Agent 3 -->
+    <path d="M 230 322 C 290 322, 290 230, 345 230" stroke="#60a5fa" stroke-width="1.5" opacity="0.5" marker-end="url(#arrow-ai)" fill="none" stroke-dasharray="3,3"/>
+  </g>
+
+
+  <!-- === RIGHT: HUMAN INTERFACE (DASHBOARD) === -->
+  <g transform="translate(570, 150)">
+    <rect x="0" y="0" width="160" height="120" rx="8" fill="#1e293b" stroke="#f472b6" stroke-width="2"/>
+    <text x="80" y="30" font-family="Arial, sans-serif" font-size="16" fill="#f472b6" text-anchor="middle" font-weight="bold">Human</text>
+    <text x="80" y="50" font-family="Arial, sans-serif" font-size="12" fill="#fbcfe8" text-anchor="middle">Dashboard</text>
+    
+    <line x1="10" y1="70" x2="150" y2="70" stroke="#334155" stroke-width="1"/>
+    
+    <text x="80" y="90" font-family="Arial, sans-serif" font-size="11" fill="#f9a8d4" text-anchor="middle">Web Interface</text>
+    <text x="80" y="105" font-family="Arial, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">(React + Vite)</text>
+  </g>
+
+  <!-- Connection: Human <-> DB -->
+  <g>
+    <!-- View path -->
+    <path d="M 570 190 L 450 190" stroke="#f472b6" stroke-width="2" stroke-dasharray="5,3"/>
+    <polygon points="450,190 460,186 460,194" fill="#f472b6" /> <!-- Left arrow manual -->
+    <text x="510" y="180" font-family="Arial, sans-serif" font-size="11" fill="#f472b6" text-anchor="middle">View / Audit</text>
+    
+    <!-- Edit path -->
+    <path d="M 570 230 L 450 230" stroke="#f472b6" stroke-width="2"/>
+    <polygon points="450,230 460,226 460,234" fill="#f472b6" /> <!-- Left arrow manual for write -->
+    <text x="510" y="250" font-family="Arial, sans-serif" font-size="11" fill="#f472b6" text-anchor="middle">Prune / Rollback</text>
+  </g>
+
+  <!-- === BOTTOM: BACKEND === -->
+  <g transform="translate(0, 380)">
+    <text x="400" y="0" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Backend API (FastAPI)</text>
+    <line x1="350" y1="-80" x2="330" y2="-20" stroke="#475569" stroke-width="1" stroke-dasharray="2,2"/>
+    <line x1="450" y1="-80" x2="470" y2="-20" stroke="#475569" stroke-width="1" stroke-dasharray="2,2"/>
+  </g>
+
+</svg>

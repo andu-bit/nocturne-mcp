@@ -1,0 +1,162 @@
+{
+  "api": {
+    "browse": {
+      "path_not_found": "Path not found: {uri}",
+      "disclosure_empty": "disclosure must not be empty",
+      "invalid_title": "Title can only contain letters, numbers, hyphens, and underscores",
+      "invalid_name": "new_name must contain only alphanumeric characters, hyphens, and underscores",
+      "rename_partial_failure": "Rename partially failed: old path removal error ({error}). New path rolled back.",
+      "keyword_not_found": "Keyword binding not found"
+    },
+    "review": {
+      "no_changes_for_node": "No changes for node '{node_uuid}'",
+      "no_pending_changes": "No pending changes",
+      "approved_node": "Approved node '{node_uuid}' ({count} rows cleared)",
+      "all_integrated": "All changes integrated ({count} row changes cleared)",
+      "memory_deleted": "Memory {memory_id} permanently deleted",
+      "rollback_failed": "Rollback failed: {error}",
+      "changeset_not_found": "Changeset not found",
+      "no_changes": "No changes to integrate",
+      "cannot_restore_memory": "Cannot restore previous memory content from snapshot target {memory_id}: {error}"
+    },
+    "settings": {
+      "docker_locked_fields": "Cannot change {fields} in Docker — these are managed by docker-compose.yml and nginx.conf.",
+      "invalid_port": "Invalid port {port}. Must be between 1 and 65535.",
+      "token_too_short": "api_token is too short ({len} chars). Use at least 32 characters, or omit to keep the existing token.",
+      "token_required": "API token is required when host is network-reachable. Set an API token (min 32 chars) or keep host as 127.0.0.1.",
+      "invalid_uri_format": "Invalid URI format: {uri}",
+      "uri_empty": "URI cannot be empty",
+      "invalid_uri_format_bare": "Invalid URI format",
+      "cannot_delete_default_ns": "Cannot delete the default namespace",
+      "no_boot_uri_override": "No boot URI override for namespace '{ns}'",
+      "unsupported_scheme": "Unsupported scheme. Allowed: {schemes}",
+      "file_exists": "File already exists",
+      "db_create_failed": "Failed to create database: {error}",
+      "db_connected": "Connection successful",
+      "db_failed": "Connection failed: {error}",
+      "open_folder_docker": "Open folder is not available in Docker deployments. Access the file via the mounted volume on the host.",
+      "sqlite_only": "Only available for SQLite databases",
+      "parse_path_failed": "Could not parse database path from URL",
+      "folder_not_found": "Folder does not exist: {path}",
+      "invalid_domain": "Invalid domain name",
+      "validation_error": "Domain names must start with a letter and can only contain lowercase letters, numbers, and underscores.",
+      "core_remove_error": "The \"core\" domain cannot be removed.",
+      "system_reserved_error": "The \"system\" domain is reserved and cannot be added.",
+      "domain_in_use_error": "Domain is not empty. It contains memories in some namespace. Please process them first before deleting the domain globally.",
+      "domain_boot_uri_conflict": "Cannot delete domain \"{domain}\": it is referenced by boot URIs in namespace(s): {namespaces}. Remove those boot URIs first."
+    },
+    "maintenance": {
+      "memory_not_found": "Memory {memory_id} not found",
+      "no_orphans": "No orphaned memories found"
+    },
+    "utils": {
+      "diff": {
+        "added": "Content added, {chars} chars",
+        "removed_all": "All content removed, was {chars} chars",
+        "minor": "Minor change: +{additions} / -{deletions} chars",
+        "moderate": "Moderate change: +{additions} / -{deletions} chars",
+        "major": "Major change: +{additions} / -{deletions} chars, {change_ratio}% change"
+      }
+    }
+  },
+  "mcp": {
+    "read_memory": {
+      "index_no_domain": "Error: index command requires a domain (e.g. system://index/core)",
+      "diagnostic_no_domain": "Error: diagnostic command requires a domain (e.g. system://diagnostic/core)",
+      "random_no_domain": "Error: random command requires a domain (e.g. system://random/core)",
+      "unknown_domain": "Error: Unknown domain '{domain}'. Valid domains: {valid_domains}",
+      "recent_invalid_number": "Error: Invalid number in URI '{uri}'. Usage: system://recent or system://recent/N (e.g. system://recent/20)",
+      "random_no_memories": "No memories available for random selection in domain '{domain}'.",
+      "error": "Error: {error}"
+    },
+    "create_memory": {
+      "disclosure_required": "Error: disclosure is required. Every memory must have a trigger condition describing WHEN to recall it. Omitting disclosure = unreachable memory.",
+      "invalid_title": "Error: Title must only contain alphanumeric characters, underscores, or hyphens (no spaces, slashes, or special characters).",
+      "error": "Error: {error}",
+      "success": "Success: Memory created at '{created_uri}'\n\n[SYSTEM REMINDER]: Look around your memory network. Are there existing memories related to this one? Would reading them trigger a need to recall this new memory? If yes, link them!\n- If the related memories are few and this memory's scope is narrow, use `add_alias`.\n- If the related memories are many and this memory's scope is broad, consider using `manage_triggers`.\n- (Never invent arbitrary placeholder words just to force a trigger.)\n\n[HOLD ON]: Do you know what '{parent_uri}' says? If you haven't read it this session, read_memory() it first. Then: does this new memory conflict with ANY memory in your current context? If yes, use memory-audit-belief-duel skill to resolve it before continuing."
+    },
+    "update_memory": {
+      "mutual_exclusive": "Error: Cannot use both old_string/new_string (patch) and append at the same time. Pick one.",
+      "old_no_new": "Error: old_string provided without new_string. To delete a section, use new_string=\"\".",
+      "new_no_old": "Error: new_string provided without old_string. Both are required for patch mode.",
+      "identical": "Error: old_string and new_string are identical. No change would be made.",
+      "not_found": "Error: Memory at '{uri}' not found.",
+      "too_many_matches": "Error: old_string found {count} times in memory content at '{uri}'. Provide more surrounding context to make it unique.",
+      "not_found_unicode": "Error: old_string not found in memory content at '{uri}', even after Unicode normalization (quotes, dashes, whitespace). Re-read the memory and copy the exact text.",
+      "multiple_unicode": "Error: old_string found multiple times in memory content at '{uri}' (after Unicode normalization). Provide more surrounding context to make it unique.",
+      "identical_result": "Error: Replacement produced identical content at '{uri}'. The old_string was found but replacing it with new_string resulted in no change. Check for subtle whitespace differences.",
+      "empty_append": "Error: Empty append for '{uri}'. Provide non-empty text to append.",
+      "no_fields": "Error: No update fields provided for '{uri}'. Use patch mode (old_string + new_string), append mode (append), or metadata fields (priority/disclosure).",
+      "success": "Success: Memory at '{uri}' updated",
+      "auto_normalized": "[SYSTEM NOTICE]: Auto-normalized `{field_name}` — converted literal '\\n' sequences to real newlines because they matched the stored content.\n- Original: `{orig_preview}`\n- Normalized: `{norm_preview}`",
+      "error": "Error: {error}"
+    },
+    "delete_memory": {
+      "not_found": "Error: Memory at '{uri}' not found.",
+      "success": "Success: Memory '{uri}' deleted.",
+      "recursive_removal": " (Recursively removed {count} descendant path(s))",
+      "error": "Error: {error}"
+    },
+    "add_alias": {
+      "success": "Success: Alias '{new_uri}' now points to same memory as '{target_uri}'",
+      "inherited_aliases": "Automatically inherited aliases for {count} descendant(s):",
+      "no_inherited": "No child aliases were inherited.",
+      "duplicate_warning": "\n\n⚠ DUPLICATE SIBLING WARNING: This node now appears {count} times under the same parent directory: {siblings}.\nIf you are renaming/moving, delete the old path now.\nIf not, you probably created a redundant alias — consider removing one.",
+      "hold_on": "\n\n[HOLD ON]: Do you know what '{parent_uri}' says? If you haven't read it this session, read_memory() it first. Then: does the aliased content conflict with ANY memory in your current context? If yes, use memory-audit-belief-duel skill to resolve it before continuing.",
+      "error": "Error: {error}"
+    },
+    "manage_triggers": {
+      "not_found": "Error: Memory at '{uri}' not found.",
+      "simultaneous_add_remove": "Error: Cannot add and remove the same keywords simultaneously: {overlap}",
+      "header": "Keywords for '{uri}':",
+      "added_line": "  Added: {keywords}",
+      "skipped_add_line": "  Already existed (skipped): {keywords}",
+      "removed_line": "  Removed: {keywords}",
+      "skipped_remove_line": "  Not found (skipped): {keywords}",
+      "current_line": "  Current: [{keywords}]",
+      "current_none": "  Current: (none)",
+      "error": "Error: {error}"
+    },
+    "search_memory": {
+      "unknown_domain": "Error: Unknown domain '{domain}'. Valid domains: {valid_domains}",
+      "no_results": "No matching memories found {scope}.",
+      "found_header": "Found {count} matches for '{query}':",
+      "error": "Error: {error}"
+    }
+  },
+  "config": {
+    "docker_hint": "Docker configuration is missing or invalid.\n\nIf you upgraded an older Docker deployment, run this on the host from\nthe repository root:\n\n  python scripts/setup_docker.py\n  docker compose up -d --build\n\nThis migrates the old .env settings into config.json while preserving\nyour existing PostgreSQL credentials and volume.\n\nIf ./config.json was accidentally created as a directory by Docker,\nremove that directory first, then rerun the setup command.",
+    "demo_copied": "[Nocturne] Copied {demo_db} → {target} (your data is now safe from git pull overwrites)",
+    "using_db": "[Nocturne] Using {name} as your database",
+    "migrating_dotenv": "[Nocturne] Migrating settings from .env → config.json",
+    "generating_env": "[Nocturne] Generating config.json from environment variables",
+    "permission_denied": "[Warning] Permission denied writing to {filename}. Settings will only persist in memory until restart.",
+    "permission_docker_hint": "If using Docker on Linux, ensure the container user (UID 1000) has write access (e.g. run `sudo chown 1000 config.json` on the host).",
+    "permission_local_hint": "Ensure the current user has write access to this file and its parent directory.",
+    "db_migrated_not_writable": "Database migrated from {demo_db} but config.json is not writable. Starting without persisting this change would lose data on restart. Fix file permissions and restart."
+  },
+  "web": {
+    "ui_building": "Admin UI is building or missing. Please refresh in a moment...",
+    "ui_missing": "Admin UI missing index.html."
+  },
+  "startup": {
+    "npm_not_found": "[Nocturne] Admin UI not built and npm not found. Install Node.js or build manually: cd frontend && npm install && npm run build",
+    "building": "[Nocturne] First run — building Admin UI (this may take a minute)...",
+    "installing_deps": "Installing dependencies",
+    "compiling": "Compiling",
+    "step_progress": "  {label}...",
+    "build_failed": "[Nocturne] '{cmd}' failed (exit {exit_code}):\n{error_msg}",
+    "build_error": "[Nocturne] Auto-build failed: {error}\n  Build manually: cd frontend && npm install && npm run build",
+    "admin_ready": "[Nocturne] Admin UI ready.",
+    "port_in_use": "\n[Nocturne] Notice: Admin UI skipped (Port {port} in use).\n[Nocturne] This is expected if another MCP instance is already providing the UI.\n[Nocturne] The MCP server itself will continue to operate normally.",
+    "admin_ui_label": "Admin UI:  {url}",
+    "rest_api_label": "REST API:  {url}"
+  },
+  "system": {
+    "uri_not_found": "URI '{uri}' not found.",
+    "error_index": "Error generating index: {error}",
+    "error_recent": "Error generating recent memories view: {error}",
+    "error_glossary": "Error generating glossary index: {error}",
+    "error_diagnostic": "Error generating diagnostic view: {error}"
+  }
+}

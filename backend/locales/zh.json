@@ -1,0 +1,67 @@
+{
+  "_note": "MCP/stdio keys (mcp.*, config.*, startup.*, system.*) are intentionally English-only — they are consumed by AI models, not humans. Do not add translations for them here.",
+  "api": {
+    "browse": {
+      "path_not_found": "路径未找到: {uri}",
+      "disclosure_empty": "disclosure 不能为空",
+      "invalid_title": "标题只能包含字母、数字、连字符和下划线",
+      "invalid_name": "new_name 只能包含字母数字字符、连字符和下划线",
+      "rename_partial_failure": "重命名部分失败: 旧路径删除错误 ({error})。新路径已回滚。",
+      "keyword_not_found": "关键词绑定未找到"
+    },
+    "review": {
+      "no_changes_for_node": "节点 '{node_uuid}' 没有变更",
+      "no_pending_changes": "没有待处理的变更",
+      "approved_node": "已批准节点 '{node_uuid}'（清除了 {count} 行）",
+      "all_integrated": "所有变更已集成（清除了 {count} 行变更）",
+      "memory_deleted": "记忆 {memory_id} 已永久删除",
+      "rollback_failed": "回滚失败: {error}",
+      "changeset_not_found": "变更集未找到",
+      "no_changes": "没有可集成的变更",
+      "cannot_restore_memory": "无法从快照目标 {memory_id} 恢复之前的记忆内容: {error}"
+    },
+    "settings": {
+      "docker_locked_fields": "无法在 Docker 中修改 {fields} — 这些由 docker-compose.yml 和 nginx.conf 管理。",
+      "invalid_port": "无效端口 {port}。必须在 1 到 65535 之间。",
+      "token_too_short": "api_token 太短（{len} 个字符）。请使用至少 32 个字符，或留空以保留现有 token。",
+      "token_required": "当 host 为网络可达地址时，必须设置 API token。请设置至少 32 字符的 API token，或将 host 保持为 127.0.0.1。",
+      "invalid_uri_format": "无效的 URI 格式: {uri}",
+      "uri_empty": "URI 不能为空",
+      "invalid_uri_format_bare": "无效的 URI 格式",
+      "cannot_delete_default_ns": "无法删除默认命名空间",
+      "no_boot_uri_override": "命名空间 '{ns}' 没有 boot URI 覆盖",
+      "unsupported_scheme": "不支持的数据库方案。允许: {schemes}",
+      "file_exists": "文件已存在",
+      "db_create_failed": "创建数据库失败: {error}",
+      "db_connected": "连接成功",
+      "db_failed": "连接失败: {error}",
+      "open_folder_docker": "Docker 部署中无法打开文件夹。请通过主机上的挂载卷访问文件。",
+      "sqlite_only": "仅适用于 SQLite 数据库",
+      "parse_path_failed": "无法从 URL 解析数据库路径",
+      "folder_not_found": "文件夹不存在: {path}",
+      "invalid_domain": "无效的域名",
+      "validation_error": "域名必须以字母开头，只能包含小写字母、数字和下划线。",
+      "core_remove_error": "\"core\" 域名不可移除。",
+      "system_reserved_error": "\"system\" 是保留域名，不可添加。",
+      "domain_in_use_error": "域名非空。任意命名空间中只要还存在该域名的记忆，就无法全局删除。请先处理这些记忆。",
+      "domain_boot_uri_conflict": "无法删除域名 \"{domain}\"：命名空间 {namespaces} 的启动记忆中仍在引用该域名。请先移除相关的启动记忆。"
+    },
+    "maintenance": {
+      "memory_not_found": "记忆 {memory_id} 未找到",
+      "no_orphans": "没有孤儿记忆"
+    },
+    "utils": {
+      "diff": {
+        "added": "新增内容，共{chars}字符",
+        "removed_all": "删除所有内容，原有{chars}字符",
+        "minor": "微小变化：新增{additions}字符，删除{deletions}字符",
+        "moderate": "中等变化：新增{additions}字符，删除{deletions}字符",
+        "major": "大幅变化：新增{additions}字符，删除{deletions}字符，变化率{change_ratio}%"
+      }
+    }
+  },
+  "web": {
+    "ui_building": "管理界面正在构建或缺失。请稍后刷新...",
+    "ui_missing": "管理界面缺少 index.html。"
+  }
+}

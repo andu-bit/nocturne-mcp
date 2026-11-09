@@ -1,0 +1,5 @@
+edge-tts
+pyttsx3
+mss
+websockets
+python-dotenv

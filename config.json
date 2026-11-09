@@ -1,0 +1,34 @@
+{
+  "database_url": "sqlite+aiosqlite:////home/alexx/nocturne_memory/nocturne_data.db",
+  "db_pool_size": 5,
+  "db_max_overflow": 5,
+  "valid_domains": [
+    "core",
+    "owl",
+    "project",
+    "sop",
+    "vault",
+    "writer",
+    "game",
+    "notes",
+    "narrative"
+  ],
+  "boot_uris": {
+    "": [
+      "core://operating_principles",
+      "core://agent",
+      "core://my_user",
+      "core://project/active",
+      "owl://obsidia/doctrine",
+      "owl://obsidia",
+      "core://agent/lessons"
+    ]
+  },
+  "host": "127.0.0.1",
+  "web_port": 8234,
+  "auto_open_browser": true,
+  "api_token": null,
+  "cors_origins": null,
+  "public_readonly_mcp": false,
+  "locale": "en"
+}

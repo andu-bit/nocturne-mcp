@@ -1,0 +1,35 @@
+{
+  "database_url": "sqlite+aiosqlite:////root/nocturne_memory/nocturne_data.db",
+  "db_pool_size": 5,
+  "db_max_overflow": 5,
+  "valid_domains": [
+    "core",
+    "owl",
+    "project",
+    "sop",
+    "vault",
+    "writer",
+    "game",
+    "notes",
+    "narrative"
+  ],
+  "boot_uris": {
+    "": [
+      "core://operating_principles",
+      "core://agent",
+      "core://agent/showroom_quality",
+      "core://my_user",
+      "core://project/active",
+      "core://agent/transport_terminal_emulator",
+      "core://apple_pay_double_lie_v1_status",
+      "core://boureanu_nfcgate_original"
+    ]
+  },
+  "host": "0.0.0.0",
+  "web_port": 8234,
+  "auto_open_browser": true,
+  "api_token": "90b334c4df64df01ccf2314694c750ecae67fa2b061eb49b742e2a7ee1196859",
+  "cors_origins": null,
+  "public_readonly_mcp": false,
+  "locale": "en"
+}
