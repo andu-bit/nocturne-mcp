@@ -1,0 +1,280 @@
+{
+  "generated_at": "2026-11-11T01:11:25",
+  "snapshot": {
+    "file": "nocturne_data_20261111_011030.db",
+    "bytes": 5365760,
+    "sha256": "0ea7119678f8d0a73db1335f659ad729045922a6d494a128f38d8ff8b70699d6",
+    "integrity_check": "ok",
+    "consistent_copy_of": "/home/alexx/nocturne_memory/nocturne_data.db"
+  },
+  "totals": {
+    "paths_by_domain": [
+      {
+        "domain": "owl",
+        "c": 16
+      },
+      {
+        "domain": "project",
+        "c": 11
+      },
+      {
+        "domain": "vault",
+        "c": 9
+      },
+      {
+        "domain": "notes",
+        "c": 3
+      },
+      {
+        "domain": "core",
+        "c": 3
+      }
+    ],
+    "active_memories": 41,
+    "memories_incl_deprecated": 58,
+    "edges": 201
+  },
+  "sources_imported": [
+    {
+      "source": "/home/alexx/.dark-owl-codex/codex.db",
+      "rows": 16,
+      "target": "owl://obsidia/codex/*",
+      "kind": "memory_nodes"
+    },
+    {
+      "source": "/home/alexx/nocturne_memory/demo.db",
+      "rows": 15,
+      "target": "notes://imports/demo_db",
+      "kind": "memories"
+    },
+    {
+      "source": "/home/alexx/.mem0/history.db",
+      "rows": 131,
+      "target": "vault://imports/mem0_history",
+      "kind": "history"
+    },
+    {
+      "source": "/home/alexx/nocturne_memory/godcode_vault.db",
+      "rows": 594,
+      "target": "vault://imports/godcode_vault",
+      "kind": "memories"
+    },
+    {
+      "source": "/home/alexx/.local/share/opencode/opencode.db",
+      "rows": null,
+      "target": "vault://imports/opencode_db",
+      "kind": "sessions"
+    },
+    {
+      "source": "/home/alexx/.pi-harness-runtime/workspace-env.sqlite",
+      "rows": null,
+      "target": "vault://imports/workspace_env",
+      "kind": "workspace_env"
+    },
+    {
+      "source": "/home/alexx/.config/ai.opencode.desktop/drafts.sqlite",
+      "rows": null,
+      "target": "vault://imports/opencode_desktop_drafts",
+      "kind": "drafts"
+    },
+    {
+      "source": "/home/alexx/Downloads/backup_airavat_20260124.tar.gz",
+      "rows": null,
+      "target": "vault://imports/airavat_backup_20260124",
+      "kind": "archive"
+    },
+    {
+      "source": "/home/alexx/Downloads/everpay_archive-20261105T140436Z-1-001",
+      "rows": null,
+      "target": "vault://imports/everpay_archive_20261105",
+      "kind": "archive"
+    },
+    {
+      "source": "/home/alexx/Projects/softpos.payment.apk/AGENTS.md",
+      "rows": 1,
+      "target": "project://softpos-payment-apk",
+      "kind": "doc"
+    }
+  ],
+  "imported_and_project_nodes": [
+    {
+      "domain": "notes",
+      "path": "imports",
+      "priority": 3,
+      "snippet": "# Imports\n\nImported databases from local SQLite sources."
+    },
+    {
+      "domain": "notes",
+      "path": "imports/demo_db",
+      "priority": 3,
+      "snippet": "# Demo Database Import\n\n**Count:** 15 items\n\n- **core://agent**: # Agent\n\nI am a"
+    },
+    {
+      "domain": "owl",
+      "path": "obsidia/codex",
+      "priority": 5,
+      "snippet": "# Dark Owl Codex Import\n\nThis directory contains memories imported from the Dark"
+    },
+    {
+      "domain": "owl",
+      "path": "obsidia/codex/Practical_EMV_Relay_Protection_-_Radu_et_al__2022",
+      "priority": 5,
+      "snippet": "Practical EMV Relay Protection - Radu et al. (2022) IEEE SP 2022\n\nThis paper pre"
+    },
+    {
+      "domain": "owl",
+      "path": "obsidia/codex/ai_mobile_rats_full",
+      "priority": 5,
+      "snippet": "# AI Mobile RATs Research Report (2024-2025)\n\n## 1. SURXRAT (Version 5)\n### Core"
+    },
+    {
+      "domain": "owl",
+      "path": "obsidia/codex/backup_airavat_20260124_tar_gz",
+      "priority": 5,
+      "snippet": "# AIRAVAT: Multifunctional Android RAT with GUI Web Panel\n\n## Overview\n- Firebas"
+    },
+    {
+      "domain": "owl",
+      "path": "obsidia/codex/codex-sdk",
+      "priority": 5,
+      "snippet": "Test memory entry from SDK"
+    },
+    {
+      "domain": "owl",
+      "path": "obsidia/codex/task",
+      "priority": 5,
+      "snippet": "TASK: task-android16-primitives\nAGENT: owl-android-red\nPRIORITY: CRITICAL\nDEEP T"
+    },
+    {
+      "domain": "project",
+      "path": "ai-mobile-rats",
+      "priority": 3,
+      "snippet": "# ai_mobile_rats_full — AI mobile RAT research\n\nPath: `/home/alexx/ai_mobile_rat"
+    },
+    {
+      "domain": "project",
+      "path": "apple-pay-relay-project",
+      "priority": 3,
+      "snippet": "# apple_pay_relay_project — dockerized relay prototype\n\nPath: `/home/alexx/apple"
+    },
+    {
+      "domain": "project",
+      "path": "emv-relay-paper-2022-sp",
+      "priority": null,
+      "snippet": "Practical EMV Relay Protection - Radu et al. (2022) IEEE SP 2022\n\nThis paper pre"
+    },
+    {
+      "domain": "project",
+      "path": "import_summary",
+      "priority": 3,
+      "snippet": "# Project Import Summary (updated 2026-11-11)\n\n## Nodes created/updated 2026-11-"
+    },
+    {
+      "domain": "project",
+      "path": "owl-express-pay",
+      "priority": 4,
+      "snippet": "# owl_express_pay — Owl Express Pay suite\n\nPath: `/home/alexx/owl_express_pay` ("
+    },
+    {
+      "domain": "project",
+      "path": "projects",
+      "priority": 5,
+      "snippet": "# Active Projects\n\nThis directory contains descriptions of active development pr"
+    },
+    {
+      "domain": "project",
+      "path": "projects-inventory-2026-11-11",
+      "priority": 4,
+      "snippet": "# Lab projects inventory — 2026-11-11\n\nSnapshot of every active lab directory, s"
+    },
+    {
+      "domain": "project",
+      "path": "proxmark-rdv4-toolchain",
+      "priority": 3,
+      "snippet": "# proxmark — Iceman RDV4 toolchain\n\nPaths: `/home/alexx/proxmark` (78 MB), `/hom"
+    },
+    {
+      "domain": "project",
+      "path": "softpos-payment-apk",
+      "priority": 4,
+      "snippet": "# AGENTS.md — softpos.payment.apk (updated 2026-11-11)\n\nMulti-component lab work"
+    },
+    {
+      "domain": "project",
+      "path": "viva-ecr-chain",
+      "priority": 4,
+      "snippet": "# viva-ecr-chain — Viva POS ECR integration\n\nPath: `/home/alexx/viva-ecr-chain` "
+    },
+    {
+      "domain": "project",
+      "path": "work-doublelie-test-rig",
+      "priority": 3,
+      "snippet": "# Work — DoubleLie relay test rig\n\nPath: `/home/alexx/Work` (16 files, 0.1 MB, n"
+    },
+    {
+      "domain": "vault",
+      "path": "imports",
+      "priority": 3,
+      "snippet": "# Imports\n\nImported databases from local SQLite sources."
+    },
+    {
+      "domain": "vault",
+      "path": "imports/airavat_backup_20260124",
+      "priority": 3,
+      "snippet": "# AIRAVAT backup (2026-01-24) import\n\nSource: `/home/alexx/Downloads/backup_aira"
+    },
+    {
+      "domain": "vault",
+      "path": "imports/everpay_archive_20261105",
+      "priority": 3,
+      "snippet": "# everpay_archive (2026-11-05) import\n\nSource: `/home/alexx/Downloads/everpay_ar"
+    },
+    {
+      "domain": "vault",
+      "path": "imports/godcode_vault",
+      "priority": 3,
+      "snippet": "# godcode_vault.db import\n\nSource: `/home/alexx/nocturne_memory/godcode_vault.db"
+    },
+    {
+      "domain": "vault",
+      "path": "imports/import_summary",
+      "priority": 3,
+      "snippet": "# Database Import Summary (updated 2026-11-11)\n\n## 2026-11-09 imports\n| Database"
+    },
+    {
+      "domain": "vault",
+      "path": "imports/mem0_history",
+      "priority": 3,
+      "snippet": "# mem0 history.db import\n\nSource: `/home/alexx/.mem0/history.db`\nRows: 131\n\n### "
+    },
+    {
+      "domain": "vault",
+      "path": "imports/opencode_db",
+      "priority": 3,
+      "snippet": "# opencode.db import\n\nSource: `/home/alexx/.local/share/opencode/opencode.db` (O"
+    },
+    {
+      "domain": "vault",
+      "path": "imports/opencode_desktop_drafts",
+      "priority": 2,
+      "snippet": "# opencode desktop drafts.sqlite import\n\nSource: `/home/alexx/.config/ai.opencod"
+    },
+    {
+      "domain": "vault",
+      "path": "imports/workspace_env",
+      "priority": 2,
+      "snippet": "# pi-harness workspace-env.sqlite import\n\nSource: `/home/alexx/.pi-harness-runti"
+    }
+  ],
+  "security": {
+    "secret_scan": "regex scan of all active memories (AWS keys, GitHub PATs, OpenAI keys, private keys, JWTs, password/secret assignments, bearer tokens, Firebase URLs): 0 hits",
+    "redactions": [
+      "core://agent-zero-token previously redacted in place"
+    ],
+    "excluded": [
+      ".env files",
+      "credential stores",
+      "browser profile databases"
+    ]
+  }
+}
